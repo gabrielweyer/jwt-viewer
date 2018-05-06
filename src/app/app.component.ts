@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  payload: string;
+
+  paste(value: string): void {
+    this.payload = '';
+
+    const firstDotOffset = value.indexOf('.');
+    const lastDotOffset = value.lastIndexOf('.');
+
+    if (firstDotOffset === -1) { return; }
+
+    const jwtPayloadBase64 = value.substring(firstDotOffset + 1, lastDotOffset);
+
+    const jwtPayload = atob(jwtPayloadBase64);
+
+    this.payload = JSON.stringify(JSON.parse(jwtPayload), null, 2);
+  }
 }

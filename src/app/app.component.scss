@@ -1,0 +1,47 @@
+@import '~variables.scss';
+
+@mixin half {
+  display: flex;
+  flex: 1 1 50%;
+  flex-direction: column;
+}
+
+.jwt-viewer {
+  display: flex;
+
+  @include lg {
+    flex-direction: column;
+  }
+
+  &__input {
+    @include half;
+
+    padding-right: 0.5em;
+
+    @include lg {
+      padding-right: 0;
+    }
+
+    textarea {
+      height: 10em;
+      font-family: $mono-font-family;
+    }
+  }
+
+  &__output {
+    @include half;
+
+    padding-left: 0.5em;
+
+    @include lg {
+      padding-left: 0;
+    }
+
+    pre {
+      margin: 0;
+      background-color: #f5f5f5;
+      padding: 1em;
+      font-family: $mono-font-family;
+    }
+  }
+}

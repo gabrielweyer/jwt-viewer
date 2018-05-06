@@ -1,0 +1,11 @@
+$action-color: #0b92c4;
+
+$mono-font-family: 'Consolas';
+
+$screen-lg-min: 992px;
+
+@mixin lg {
+  @media (max-width: #{$screen-lg-min}) {
+      @content;
+  }
+}

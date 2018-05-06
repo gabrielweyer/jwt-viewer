@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~variables.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0 10px;
+  height: 100%;
+}
+
+body {
+  font-family: 'Verdana', sans-serif;
+  line-height: 1.3em;
+}
+
+a {
+  cursor: pointer;
+  color: $action-color;
+  text-decoration: underline darken($action-color, 5);
+}
+
+em {
+  font-weight: 600;
+  font-style: normal;
+}
+
+h1 {
+  margin: 0;
+  padding: 0.5em 0 0 0;
+  line-height: 1.5em;
+}
+
+h2 {
+  margin: 0;
+  padding: 0 0 0.4em 0;
+  line-height: 1.25em;
+
+  @include lg {
+    padding-top: 0.4em;
+  }
+}
