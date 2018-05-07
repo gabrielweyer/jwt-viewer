@@ -1,6 +1,6 @@
 # JWT Viewer
 
-Exactly like [JWT.io][jwt-io], except it's neither as beautiful or remotely as useful :trollface:.
+Exactly like [JWT.io][jwt-io], except it's neither as beautiful nor remotely as useful :trollface:.
 
 I'm only interested in the claims from the `payload`. I neither care about the `header` nor the `signature`.
 
@@ -8,7 +8,7 @@ If you feel adventurous you can try the [hosted version][jwt-viewer].
 
 ## Running locally
 
-If you would like to inspect some top-secret `JWT` I advise you to run locally (the app is self-contained). You'll need:
+:female_detective: If you would like to inspect some top-secret `JWT` I advise you to run locally (the app is self-contained). You'll need:
 
 - [Node.js][node-js]
 - [Yarn][yarn]
@@ -24,7 +24,7 @@ yarn start
 
 Each push to `master` triggers a build in `VSTS` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
 
-`VSTS` does not support anonymous browsing but the build pipeline is available as [YAML](.vsts-ci.yml).
+`VSTS` does not (yet) support anonymous browsing but the build pipeline is available as [YAML](.vsts-ci.yml).
 
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
