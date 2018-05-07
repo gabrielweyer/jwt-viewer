@@ -38,3 +38,13 @@ h2 {
     padding-top: 0.4em;
   }
 }
+
+.mono-font {
+  font-family: $mono-font-family;
+  font-size: $mono-font-size-normal;
+  background-color: $mono-font-background-color;
+  border-radius: 3px;
+  padding: 0 5px;
+  color: $mono-font-color;
+  border: 1px solid darken($mono-font-background-color, 10%);
+}
