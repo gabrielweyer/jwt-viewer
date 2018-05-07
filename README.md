@@ -1,27 +1,33 @@
-# JwtViewer
+# JWT Viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Exactly like [JWT.io][jwt-io], except it's neither as beautiful or remotely as useful.
 
-## Development server
+If you feel adventurous you can try the [hosted version][jwt-viewer].
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is very much a **work in progress**. If I manage to motivate myself I'll work on the cards listed in this [public Trello board][trello-board].
 
-## Code scaffolding
+## Running locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If you would like to inspect some top-secret `JWT` I advise you to run locally (the app is self-contained). You'll need:
 
-## Build
+- [Node.js][node-js]
+- [Yarn][yarn]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Then run the following commands one by one:
 
-## Running unit tests
+```shell
+yarn install
+yarn start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## CI/CD
 
-## Running end-to-end tests
+Each push to `master` triggers a build in `VSTS` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and tab reload.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+`VSTS` does not support anonymous browsing but the build pipeline is available as [YAML](.vsts-ci.yml).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[jwt-io]: https://jwt.io/
+[jwt-viewer]: https://jwtviewer.azurewebsites.net/
+[trello-board]: https://trello.com/b/8JWl1Nc7/jwt-viewer
+[node-js]: https://nodejs.org/en/download/
+[yarn]: https://yarnpkg.com/lang/en/docs/install/
