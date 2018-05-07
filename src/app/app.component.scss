@@ -8,9 +8,19 @@
 
 .jwt-viewer {
   display: flex;
+  padding-bottom: 9em;
+
+  @include lg {
+    padding-bottom: 15em;
+  }
 
   @include lg {
     flex-direction: column;
+  }
+
+  &__app {
+    min-height: 100%;
+    position: relative;
   }
 
   &__input {
@@ -43,5 +53,20 @@
       padding: 1em;
       font-family: $mono-font-family;
     }
+  }
+
+  &__footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 4em;
+
+    @include lg {
+      height: 12em;
+    }
+
+    font-size: $font-size-small;
+    text-align: center;
+    padding: 4em 0;
   }
 }

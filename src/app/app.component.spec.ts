@@ -1,14 +1,26 @@
+import { FooterComponent } from './footer/footer.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
+import { APP_INITIALIZER } from '@angular/core';
+import { AppConfigService } from '../shared/app-config.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        LinkComponent
+        LinkComponent,
+        FooterComponent
       ],
+      imports: [
+        HttpClientModule
+      ],
+      providers: [
+        AppConfigService,
+        { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
+      ]
     }).compileComponents();
   }));
 
