@@ -9,7 +9,12 @@ body {
 
 body {
   font-family: 'Verdana', sans-serif;
+  font-size: $font-size-normal;
   line-height: 1.3em;
+
+  @include lg {
+    font-size: $font-size-small;
+  }
 }
 
 a {
@@ -26,17 +31,15 @@ em {
 h1 {
   margin: 0;
   padding: 0.5em 0 0 0;
-  line-height: 1.5em;
+  line-height: $font-size-x-large;
+  font-size: $font-size-x-large;
 }
 
 h2 {
   margin: 0;
   padding: 0 0 0.4em 0;
-  line-height: 1.25em;
-
-  @include lg {
-    padding-top: 0.4em;
-  }
+  line-height: $font-size-large;
+  font-size: $font-size-large;
 }
 
 .mono-font {

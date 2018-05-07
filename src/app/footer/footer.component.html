@@ -7,7 +7,7 @@
 <p>
   Build
   <span class="mono-font">{{build}}</span> commit
-  <app-link [href]="'https://github.com/gabrielweyer/jwt-viewer/commit/' + commit">{{commit}}</app-link><br>
+  <app-link [href]="'https://github.com/gabrielweyer/jwt-viewer/commit/' + commit">{{commit | slice:0:7}}</app-link><br>
   Source on <app-link [href]="'https://github.com/gabrielweyer/jwt-viewer'">GitHub</app-link> - deployed by
   <app-link [href]="'https://www.visualstudio.com/team-services/'">VSTS</app-link> - hosted on
   <app-link [href]="'https://azure.microsoft.com/en-gb/services/storage/blobs/'">Azure Blob storage</app-link>
