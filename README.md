@@ -1,10 +1,10 @@
 # JWT Viewer
 
-Exactly like [JWT.io][jwt-io], except it's neither as beautiful or remotely as useful.
+Exactly like [JWT.io][jwt-io], except it's neither as beautiful or remotely as useful :trollface:.
+
+I'm only interested in the claims from the `payload`. I neither care about the `header` nor the `signature`.
 
 If you feel adventurous you can try the [hosted version][jwt-viewer].
-
-This is very much a **work in progress**. If I manage to motivate myself I'll work on the cards listed in this [public Trello board][trello-board].
 
 ## Running locally
 
@@ -22,7 +22,7 @@ yarn start
 
 ## CI/CD
 
-Each push to `master` triggers a build in `VSTS` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and tab reload.
+Each push to `master` triggers a build in `VSTS` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
 
 `VSTS` does not support anonymous browsing but the build pipeline is available as [YAML](.vsts-ci.yml).
 
