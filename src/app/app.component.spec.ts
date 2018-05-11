@@ -1,3 +1,5 @@
+import { JwtService } from './../shared/jwt.service';
+import { ClippyService } from './../shared/clippy.service';
 import { FooterComponent } from './footer/footer.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
@@ -19,6 +21,8 @@ describe('AppComponent', () => {
       ],
       providers: [
         AppConfigService,
+        ClippyService,
+        JwtService,
         { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
       ]
     }).compileComponents();

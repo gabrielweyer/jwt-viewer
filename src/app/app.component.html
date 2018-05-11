@@ -8,7 +8,12 @@
     </div>
     <div class="jwt-viewer__output">
       <h2>Payload</h2>
-      <pre *ngIf="payload">{{payload}}</pre>
+      <pre *ngIf="jwt">{{jwt.payload | json}}</pre>
+      <ul *ngIf="jwt">
+        <li *ngIf="jwt.iat"><span class="mono-font">iat</span> (Issued At): {{jwt.iat}}</li>
+        <li *ngIf="jwt.nbf"><span class="mono-font">nbf</span> (Not Before): {{jwt.nbf}}</li>
+        <li *ngIf="jwt.exp"><span class="mono-font">exp</span> (Expiration Time): {{jwt.exp}}</li>
+      </ul>
     </div>
   </div>
   <app-footer class="jwt-viewer__footer"></app-footer>

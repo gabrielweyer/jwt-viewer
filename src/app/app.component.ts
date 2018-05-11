@@ -1,4 +1,6 @@
+import { ClippyService } from './../shared/clippy.service';
 import { Component } from '@angular/core';
+import { JwtService, Jwt } from '../shared/jwt.service';
 
 @Component({
   selector: 'app-root',
@@ -6,28 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  payload: string;
+  jwt: Jwt;
+
+  constructor(private readonly clippy: ClippyService, private readonly jwtService: JwtService) {}
 
   paste(ev: ClipboardEvent): void {
-    let value: string;
-
-    if (ev.clipboardData) {
-      value = ev.clipboardData.getData('text/plain');
-    } else if (window['clipboardData']) {
-      value = window['clipboardData'].getData('Text');
-    }
-
-    this.payload = '';
-
-    const firstDotOffset = value.indexOf('.');
-    const lastDotOffset = value.lastIndexOf('.');
-
-    if (firstDotOffset === -1) { return; }
-
-    const jwtPayloadBase64 = value.substring(firstDotOffset + 1, lastDotOffset);
-
-    const jwtPayload = atob(jwtPayloadBase64);
-
-    this.payload = JSON.stringify(JSON.parse(jwtPayload), null, 2);
+    this.jwt = null;
+    const value = this.clippy.getClipboard(ev);
+    this.jwt = this.jwtService.getJwt(value);
   }
 }

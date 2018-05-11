@@ -7,12 +7,16 @@ import { LinkComponent } from './link/link.component';
 import { FooterComponent } from './footer/footer.component';
 import { APP_INITIALIZER } from '@angular/core';
 import { AppConfigService } from './../shared/app-config.service';
+import { ClippyService } from '../shared/clippy.service';
+import { JwtService } from '../shared/jwt.service';
+import { JsonPipe } from '../shared/json.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LinkComponent,
-    FooterComponent
+    FooterComponent,
+    JsonPipe
   ],
   imports: [
     BrowserModule,
@@ -20,6 +24,8 @@ import { AppConfigService } from './../shared/app-config.service';
   ],
   providers: [
     AppConfigService,
+    ClippyService,
+    JwtService,
     { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
   ],
   bootstrap: [AppComponent]

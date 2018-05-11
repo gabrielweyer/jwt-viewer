@@ -60,6 +60,11 @@ p {
       font-family: $mono-font-family;
       overflow-x: auto;
     }
+
+    ul {
+      font-size: 0.8em;
+      line-height: 1.6em;
+    }
   }
 
   &__footer {
