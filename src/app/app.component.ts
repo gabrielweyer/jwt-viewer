@@ -8,7 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   payload: string;
 
-  paste(value: string): void {
+  paste(ev: ClipboardEvent): void {
+    let value: string;
+
+    if (ev.clipboardData) {
+      value = ev.clipboardData.getData('text/plain');
+    } else if (window['clipboardData']) {
+      value = window['clipboardData'].getData('Text');
+    }
+
     this.payload = '';
 
     const firstDotOffset = value.indexOf('.');

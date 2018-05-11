@@ -4,7 +4,7 @@
   <div class="jwt-viewer">
     <div class="jwt-viewer__input">
       <h2>JWT</h2>
-      <textarea (paste)="paste($event.clipboardData.getData('text/plain'))"></textarea>
+      <textarea (paste)="paste($event)"></textarea>
     </div>
     <div class="jwt-viewer__output">
       <h2>Payload</h2>
