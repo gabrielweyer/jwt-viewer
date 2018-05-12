@@ -65,6 +65,13 @@ p {
       font-size: 0.8em;
       line-height: 1.6em;
     }
+
+    input {
+      padding: 3px 4px;
+      border: 1px solid #000;
+      margin-bottom: 1em;
+      width: calc(100% - 10px);
+    }
   }
 
   &__footer {
