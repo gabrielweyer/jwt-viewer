@@ -1,5 +1,7 @@
 # JWT Viewer
 
+[![Build Status](https://dev.azure.com/gabrielweyer/JwtViewer/_apis/build/status/JwtViewer)](https://dev.azure.com/gabrielweyer/JwtViewer/_build/latest?definitionId=6)
+
 Exactly like [JWT.io][jwt-io], except it's neither as beautiful nor remotely as useful :trollface:.
 
 I'm only interested in the claims from the `payload`. I neither care about the `header` nor the `signature`.
@@ -22,9 +24,7 @@ yarn start
 
 ## CI/CD
 
-Each push to `master` triggers a build in `VSTS` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
-
-`VSTS` does not (yet) support anonymous browsing but the build pipeline is available as [YAML](.vsts-ci.yml).
+Each push to `master` triggers a build in `Azure DevOps` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
 
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
