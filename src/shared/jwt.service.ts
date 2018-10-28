@@ -1,3 +1,12 @@
+export class Jwt {
+  constructor(
+    public readonly payload: string,
+    public readonly iat: Date,
+    public readonly nbf: Date,
+    public readonly exp: Date
+  ) {}
+}
+
 export class JwtService {
   getJwt(value: string): Jwt {
     const firstDotOffset = value.indexOf('.');
@@ -32,13 +41,4 @@ export class JwtService {
   private getDateFromEpoch(epoch: string): Date {
     return new Date(+epoch * 1000);
   }
-}
-
-export class Jwt {
-  constructor(
-    public readonly payload: string,
-    public readonly iat: Date,
-    public readonly nbf: Date,
-    public readonly exp: Date
-  ) {}
 }
