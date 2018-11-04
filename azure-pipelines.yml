@@ -1,4 +1,4 @@
-resources:
+esources:
 - repo: self
 queue:
   name: Hosted Ubuntu 1604
