@@ -5,15 +5,20 @@ pool:
 
 steps:
 
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@2
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-installer-task.YarnInstaller@3
   displayName: Install Yarn 1.21.1
   inputs:
     versionSpec: 1.21.1
 
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@3
   displayName: yarn install
   inputs:
-    Arguments: install
+    arguments: install
+
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@3
+  displayName: yarn lint
+  inputs:
+    arguments: lint
 
 - script: |
     sudo apt-get -qq update > /dev/null
@@ -22,17 +27,17 @@ steps:
     sudo apt-get -y -qq install libgdk3.0-cil > /dev/null
   displayName: Install modules required to run headless Chrome
 
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@3
   displayName: yarn test-ci
   inputs:
-    Arguments: test-ci
+    arguments: test-ci
 
-- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@2
-  displayName: yarn build
+- task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@3
+  displayName: yarn build-prod
   inputs:
-    Arguments: build-prod
+    arguments: build-prod
 
-- task: geeklearningio.gl-vsts-tasks-file-patch.json-patch-task.JsonPatch@2
+- task: geeklearningio.gl-vsts-tasks-file-patch.json-patch-task.JsonPatch@3
   displayName: Version web Artifact
   inputs:
     JsonWorkingDir: 'dist/'
