@@ -18,7 +18,7 @@ If you feel adventurous you can try the [hosted version][jwt-viewer].
 Then run the following commands one by one:
 
 ```shell
-yarn install
+yarn
 yarn start
 ```
 

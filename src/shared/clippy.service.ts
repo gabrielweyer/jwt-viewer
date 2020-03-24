@@ -1,3 +1,6 @@
+import { Injectable } from '@angular/core';
+
+@Injectable()
 export class ClippyService {
   getClipboard(ev: ClipboardEvent): string {
     if (ev.clipboardData) {

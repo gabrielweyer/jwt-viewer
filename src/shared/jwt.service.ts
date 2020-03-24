@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 export class Jwt {
   constructor(
     public readonly payload: string,
@@ -7,6 +9,7 @@ export class Jwt {
   ) {}
 }
 
+@Injectable()
 export class JwtService {
   getJwt(value: string): Jwt {
     const firstDotOffset = value.indexOf('.');
