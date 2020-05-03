@@ -27,6 +27,11 @@ steps:
     sudo apt-get -y -qq install libgdk3.0-cil > /dev/null
   displayName: Install modules required to run headless Chrome
 
+- bash: |
+    sudo apt-get update
+    sudo apt-get install -y libgbm1
+  displayName: Install libgbm1 (required by Puppeteer 3)
+
 - task: geeklearningio.gl-vsts-tasks-yarn.yarn-task.Yarn@3
   displayName: yarn test-ci
   inputs:
