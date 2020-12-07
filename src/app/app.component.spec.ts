@@ -1,7 +1,7 @@
 import { JwtService } from './../shared/jwt.service';
 import { ClippyService } from './../shared/clippy.service';
 import { FooterComponent } from './footer/footer.component';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
 import { APP_INITIALIZER } from '@angular/core';
@@ -9,7 +9,7 @@ import { AppConfigService } from '../shared/app-config.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -28,13 +28,13 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render title in a h1 tag', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
