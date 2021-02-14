@@ -24,7 +24,7 @@ yarn start
 
 ## CI/CD
 
-Each push to `master` triggers a build in `Azure DevOps` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
+Each push to `main` triggers a build in `Azure DevOps` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
 
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
