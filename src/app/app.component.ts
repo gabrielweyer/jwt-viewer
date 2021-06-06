@@ -8,21 +8,21 @@ import { JwtService, Jwt } from '../shared/jwt.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  jwt: Jwt;
-  decodedBase64: string;
+  jwt: Jwt | undefined;
+  decodedBase64 = '';
 
   constructor(private readonly clippy: ClippyService, private readonly jwtService: JwtService) {}
 
   pasteJwt(ev: ClipboardEvent): void {
-    this.jwt = null;
-    this.decodedBase64 = null;
+    this.jwt = undefined;
+    this.decodedBase64 = '';
 
     const value = this.clippy.getClipboard(ev);
     this.jwt = this.jwtService.getJwt(value);
   }
 
   pasteBase64(ev: ClipboardEvent): void {
-    this.decodedBase64 = null;
+    this.decodedBase64 = '';
 
     const value = this.clippy.getClipboard(ev);
     this.decodedBase64 = atob(value);

@@ -3,15 +3,15 @@ import { Injectable } from '@angular/core';
 export class Jwt {
   constructor(
     public readonly payload: string,
-    public readonly iat: Date,
-    public readonly nbf: Date,
-    public readonly exp: Date
+    public readonly iat: Date | undefined,
+    public readonly nbf: Date | undefined,
+    public readonly exp: Date | undefined
   ) {}
 }
 
 @Injectable()
 export class JwtService {
-  getJwt(value: string): Jwt {
+  getJwt(value: string): Jwt | undefined {
     const firstDotOffset = value.indexOf('.');
     const lastDotOffset = value.lastIndexOf('.');
 
@@ -22,9 +22,9 @@ export class JwtService {
     const payload = atob(jwtPayloadBase64);
     const jwt = JSON.parse(payload);
 
-    let iat: Date;
-    let nbf: Date;
-    let exp: Date;
+    let iat: Date | undefined;
+    let nbf: Date | undefined;
+    let exp: Date | undefined;
 
     if (jwt.iat) {
       iat = this.getDateFromEpoch(jwt.iat);
