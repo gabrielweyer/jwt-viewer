@@ -1,6 +1,6 @@
 # JWT Viewer
 
-[![Build Status](https://dev.azure.com/gabrielweyer/JwtViewer/_apis/build/status/JwtViewer)](https://dev.azure.com/gabrielweyer/JwtViewer/_build/latest?definitionId=6)
+[![Build Status](https://dev.azure.com/gabrielweyer/JwtViewer/_apis/build/status/JwtViewer?branchName=main)](https://dev.azure.com/gabrielweyer/JwtViewer/_build/latest?definitionId=7&branchName=main)
 
 Exactly like [JWT.io][jwt-io], except it's neither as beautiful nor remotely as useful :trollface:.
 
