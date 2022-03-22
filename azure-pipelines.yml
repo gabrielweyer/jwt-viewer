@@ -60,9 +60,9 @@ stages:
       displayName: Publish Artifact - web
       artifact: web
 
-    - publish: 'template/template.json'
-      displayName: Publish Artifact - ARM
-      artifact: arm
+    - publish: 'template/template.bicep'
+      displayName: Publish Artifact - Bicep
+      artifact: bicep
 
     - task: PublishTestResults@2
       displayName: Publish tests results
@@ -97,14 +97,14 @@ stages:
           steps:
 
           - task: AzureResourceGroupDeployment@3
-            displayName: 'Deploy ARM template'
+            displayName: 'Deploy Bicep file'
             inputs:
               ConnectedServiceName: 'Azure Resource Manager using automatic service principal'
               action: 'Create Or Update Resource Group'
               resourceGroupName: '$(ResourceGroupName)'
               location: '$(ResourceGroupLocation)'
               templateLocation: 'Linked artifact'
-              csmFile: '$(Pipeline.Workspace)/arm/template.json'
+              csmFile: '$(Pipeline.Workspace)/bicep/template.bicep'
               overrideParameters: -name $(StorageAccountName)
               deploymentMode: 'Incremental'
 
