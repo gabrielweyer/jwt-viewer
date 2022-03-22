@@ -105,7 +105,7 @@ stages:
               location: '$(ResourceGroupLocation)'
               templateLocation: 'Linked artifact'
               csmFile: '$(Pipeline.Workspace)/bicep/template.bicep'
-              overrideParameters: -name $(StorageAccountName)
+              overrideParameters: -storageAccountName $(StorageAccountName)
               deploymentMode: 'Incremental'
 
           - task: AzureCLI@2
