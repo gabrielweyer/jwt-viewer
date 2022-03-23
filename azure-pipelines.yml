@@ -60,7 +60,7 @@ stages:
       displayName: Publish Artifact - web
       artifact: web
 
-    - publish: 'template/template.bicep'
+    - publish: 'deploy/main.bicep'
       displayName: Publish Artifact - Bicep
       artifact: bicep
 
@@ -104,7 +104,7 @@ stages:
               resourceGroupName: '$(ResourceGroupName)'
               location: '$(ResourceGroupLocation)'
               templateLocation: 'Linked artifact'
-              csmFile: '$(Pipeline.Workspace)/bicep/template.bicep'
+              csmFile: '$(Pipeline.Workspace)/bicep/main.bicep'
               overrideParameters: -storageAccountName $(StorageAccountName)
               deploymentMode: 'Incremental'
 
