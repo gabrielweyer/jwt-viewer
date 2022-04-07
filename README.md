@@ -1,6 +1,6 @@
 # JWT Viewer
 
-[![Build Status](https://dev.azure.com/gabrielweyer/JwtViewer/_apis/build/status/JwtViewer?branchName=main)](https://dev.azure.com/gabrielweyer/JwtViewer/_build/latest?definitionId=7&branchName=main)
+[![Build Status][github-actions-shield]][github-actions]
 
 Exactly like [JWT.io][jwt-io], except it's neither as beautiful nor remotely as useful :trollface:.
 
@@ -24,10 +24,12 @@ yarn start
 
 ## CI/CD
 
-Each push to `main` triggers a build in `Azure DevOps` and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
+Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
 
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
 [trello-board]: https://trello.com/b/8JWl1Nc7/jwt-viewer
 [node-js]: https://nodejs.org/en/download/
 [yarn]: https://yarnpkg.com/lang/en/docs/install/
+[github-actions-shield]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml/badge.svg
+[github-actions]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml
