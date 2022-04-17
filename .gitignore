@@ -1,5 +1,3 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # compiled output
 /dist
 /dist-server
@@ -29,7 +27,6 @@
 /.angular/cache
 /.sass-cache
 /connect.lock
-/coverage
 /libpeerconnection.log
 testem.log
 /typings
@@ -43,7 +40,10 @@ testem.log
 Thumbs.db
 
 # Tests
-/tests-results
+/test-results
+
+# Coverage
+/coverage
 
 # Yarn
 yarn-error.log
