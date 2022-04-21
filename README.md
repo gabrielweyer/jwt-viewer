@@ -12,8 +12,8 @@ If you feel adventurous you can try the [hosted version][jwt-viewer].
 
 :female_detective: If you would like to inspect some top-secret `JWT` I advise you to run locally (the app is self-contained). You'll need:
 
-- [Node.js][node-js]
-- [Yarn][yarn]
+- [Latest Node.js LTS][node-js]
+- [Yarn modern][yarn-modern]
 
 Then run the following commands one by one:
 
@@ -29,6 +29,6 @@ Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Az
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
 [node-js]: https://nodejs.org/en/download/
-[yarn]: https://yarnpkg.com/getting-started/install
+[yarn-modern]: https://yarnpkg.com/getting-started/install
 [github-actions-shield]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml/badge.svg
 [github-actions]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml
