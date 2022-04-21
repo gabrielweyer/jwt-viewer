@@ -28,8 +28,7 @@ Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Az
 
 [jwt-io]: https://jwt.io/
 [jwt-viewer]: https://jwtviewer.azurewebsites.net/
-[trello-board]: https://trello.com/b/8JWl1Nc7/jwt-viewer
 [node-js]: https://nodejs.org/en/download/
-[yarn]: https://yarnpkg.com/lang/en/docs/install/
+[yarn]: https://yarnpkg.com/getting-started/install
 [github-actions-shield]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml/badge.svg
 [github-actions]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml
