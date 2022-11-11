@@ -24,10 +24,10 @@ yarn start
 
 ## CI/CD
 
-Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Azure Blob storage`. I'm using `Azure Functions Proxies` to be able to support an extension-less URI and reload.
+Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Azure Static Web Apps`.
 
 [jwt-io]: https://jwt.io/
-[jwt-viewer]: https://jwtviewer.azurewebsites.net/
+[jwt-viewer]: https://kind-plant-0ef37e800.2.azurestaticapps.net
 [node-js]: https://nodejs.org/en/download/
 [yarn-modern]: https://yarnpkg.com/getting-started/install
 [github-actions-shield]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml/badge.svg
