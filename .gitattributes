@@ -1,7 +1,6 @@
 * eol=lf
 
 # Yarn
-yarn.lock eol=crlf
 /.yarn/releases/** binary
 
 # Vendored extensions
