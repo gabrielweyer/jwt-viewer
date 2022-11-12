@@ -9773,7 +9773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.7.3, source-map@npm:~0.7.2":
+"source-map@npm:^0.7.3":
   version: 0.7.3
   resolution: "source-map@npm:0.7.3"
   checksum: cd24efb3b8fa69b64bf28e3c1b1a500de77e84260c5b7f2b873f88284df17974157cc88d386ee9b6d081f08fdd8242f3fc05c953685a6ad81aad94c7393dedea
@@ -10108,7 +10108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:5.14.2":
+"terser@npm:5.14.2, terser@npm:^5.7.2":
   version: 5.14.2
   resolution: "terser@npm:5.14.2"
   dependencies:
@@ -10119,20 +10119,6 @@ __metadata:
   bin:
     terser: bin/terser
   checksum: cabb50a640d6c2cfb351e4f43dc7bf7436f649755bb83eb78b2cacda426d5e0979bd44e6f92d713f3ca0f0866e322739b9ced888ebbce6508ad872d08de74fcc
-  languageName: node
-  linkType: hard
-
-"terser@npm:^5.7.2":
-  version: 5.12.1
-  resolution: "terser@npm:5.12.1"
-  dependencies:
-    acorn: ^8.5.0
-    commander: ^2.20.0
-    source-map: ~0.7.2
-    source-map-support: ~0.5.20
-  bin:
-    terser: bin/terser
-  checksum: dd33af5d87a1159bcc38f354707505f1449a33d1491c512e9536f11fea7c3474cdc40e2e5fdf75f58658cfaab8ef47cb7454acd6406b2ce487675cb1978c6275
   languageName: node
   linkType: hard
 
