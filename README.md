@@ -27,7 +27,7 @@ yarn start
 Each push to `main` triggers a `GitHub Actions` workflow and a deployment to `Azure Static Web Apps`.
 
 [jwt-io]: https://jwt.io/
-[jwt-viewer]: https://kind-plant-0ef37e800.2.azurestaticapps.net
+[jwt-viewer]: https://victorious-tree-09a6b2700.2.azurestaticapps.net
 [node-js]: https://nodejs.org/en/download/
 [yarn-modern]: https://yarnpkg.com/getting-started/install
 [github-actions-shield]: https://github.com/gabrielweyer/jwt-viewer/actions/workflows/workflow.yml/badge.svg
