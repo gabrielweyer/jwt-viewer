@@ -11,21 +11,19 @@ import { HttpClientModule } from '@angular/common/http';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        LinkComponent,
-        FooterComponent
-      ],
-      imports: [
-        HttpClientModule
-      ],
-      providers: [
-        AppConfigService,
-        ClippyService,
-        JwtService,
-        { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
-      ]
-    }).compileComponents();
+    imports: [
+      HttpClientModule,
+      LinkComponent,
+      FooterComponent,
+      AppComponent
+    ],
+    providers: [
+      AppConfigService,
+      ClippyService,
+      JwtService,
+      { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
+    ]
+}).compileComponents();
   }));
 
   it('should create the app', waitForAsync(() => {
