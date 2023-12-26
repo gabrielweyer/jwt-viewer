@@ -1,10 +1,10 @@
 import { PipeTransform, Pipe } from '@angular/core';
 
 @Pipe({
-    name: 'json',
+    name: 'betterJson',
     standalone: true
 })
-export class JsonPipe implements PipeTransform {
+export class BetterJsonPipe implements PipeTransform {
   transform(value: string): string {
     return JSON.stringify(JSON.parse(value), null, 2);
   }

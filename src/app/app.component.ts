@@ -2,15 +2,16 @@ import { ClippyService } from './../shared/clippy.service';
 import { Component } from '@angular/core';
 import { JwtService, Jwt } from '../shared/jwt.service';
 import { FooterComponent } from './footer/footer.component';
-import { NgIf, JsonPipe } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { LinkComponent } from './link/link.component';
+import { BetterJsonPipe } from '../shared/better-json.pipe';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [LinkComponent, NgIf, FooterComponent, JsonPipe]
+  imports: [LinkComponent, NgIf, FooterComponent, BetterJsonPipe]
 })
 export class AppComponent {
   jwt: Jwt | undefined;
