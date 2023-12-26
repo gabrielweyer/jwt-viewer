@@ -9,7 +9,7 @@
     <div class="jwt-viewer__output">
       <h2>Payload</h2>
       <div *ngIf="jwt">
-        <pre>{{jwt.payload | json}}</pre>
+        <pre>{{jwt.payload | betterJson}}</pre>
         <ul>
           <li *ngIf="jwt.iat"><span class="mono-font">iat</span> (Issued At): {{jwt.iat}}</li>
           <li *ngIf="jwt.nbf"><span class="mono-font">nbf</span> (Not Before): {{jwt.nbf}}</li>
