@@ -6,22 +6,20 @@ import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
 import { APP_INITIALIZER } from '@angular/core';
 import { AppConfigService } from '../shared/app-config.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [
-      HttpClientModule,
-      LinkComponent,
-      FooterComponent,
-      AppComponent
-    ],
+    imports: [LinkComponent,
+        FooterComponent,
+        AppComponent],
     providers: [
-      AppConfigService,
-      ClippyService,
-      JwtService,
-      { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true }
+        AppConfigService,
+        ClippyService,
+        JwtService,
+        { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true },
+        provideHttpClient(withInterceptorsFromDi())
     ]
 }).compileComponents();
   }));
