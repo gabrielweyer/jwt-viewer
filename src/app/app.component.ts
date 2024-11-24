@@ -10,14 +10,13 @@ import { BetterJsonPipe } from '../shared/better-json.pipe';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  standalone: true,
   imports: [LinkComponent, NgIf, FooterComponent, BetterJsonPipe]
 })
 export class AppComponent {
   jwt: Jwt | undefined;
   decodedBase64 = '';
 
-  constructor(private readonly clippy: ClippyService, private readonly jwtService: JwtService) {}
+  constructor(private readonly clippy: ClippyService, private readonly jwtService: JwtService) { }
 
   pasteJwt(ev: ClipboardEvent): void {
     this.jwt = undefined;
