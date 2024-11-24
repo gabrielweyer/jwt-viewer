@@ -4,7 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
-import { APP_INITIALIZER } from '@angular/core';
+import { inject, provideAppInitializer } from '@angular/core';
 import { AppConfigService } from '../shared/app-config.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
@@ -18,7 +18,10 @@ describe('AppComponent', () => {
         AppConfigService,
         ClippyService,
         JwtService,
-        { provide: APP_INITIALIZER, useFactory: (config: AppConfigService) => () => config.load(), deps: [AppConfigService], multi: true },
+        provideAppInitializer(() => {
+          const config = inject(AppConfigService);
+          return config.load();
+        }),
         provideHttpClient(withInterceptorsFromDi())
     ]
 }).compileComponents();
