@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@use '../variables.scss';
 
 @mixin half {
   display: flex;
@@ -15,11 +15,11 @@ p {
   display: flex;
   padding-bottom: 10em;
 
-  @include lg {
+  @include variables.lg {
     padding-bottom: 18em;
   }
 
-  @include lg {
+  @include variables.lg {
     flex-direction: column;
   }
 
@@ -33,18 +33,18 @@ p {
 
     padding-right: 0.5em;
 
-    @include lg {
+    @include variables.lg {
       padding-right: 0;
       padding-bottom: 0.4em;
     }
 
     textarea {
       height: 10em;
-      font-family: $mono-font-family;
-      color: $font-color;
-      background: $background-color;
+      font-family: variables.$mono-font-family;
+      color: variables.$font-color;
+      background: variables.$background-color;
       border-radius: 3px;
-      border: 1px solid $font-color;
+      border: 1px solid variables.$font-color;
     }
   }
 
@@ -53,15 +53,15 @@ p {
 
     padding-left: 0.5em;
 
-    @include lg {
+    @include variables.lg {
       padding-left: 0;
     }
 
     pre {
       margin: 0;
-      background-color: $mono-font-background-color;
+      background-color: variables.$mono-font-background-color;
       padding: 1em;
-      font-family: $mono-font-family;
+      font-family: variables.$mono-font-family;
       overflow-x: auto;
     }
 
@@ -72,9 +72,9 @@ p {
 
     input {
       padding: 3px 4px;
-      color: $font-color;
-      background: $background-color;
-      border: 1px solid $font-color;
+      color: variables.$font-color;
+      background: variables.$background-color;
+      border: 1px solid variables.$font-color;
       margin-bottom: 1em;
       width: calc(100% - 10px);
     }
@@ -85,11 +85,11 @@ p {
     width: 100%;
     bottom: 0;
     height: 8em;
-    font-size: $font-size-x-small;
+    font-size: variables.$font-size-x-small;
     text-align: center;
     padding: 2em 0;
 
-    @include lg {
+    @include variables.lg {
       height: 18em;
     }
   }
