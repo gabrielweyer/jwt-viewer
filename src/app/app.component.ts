@@ -1,5 +1,5 @@
 import { ClippyService } from './../shared/clippy.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { JwtService, Jwt } from '../shared/jwt.service';
 import { FooterComponent } from './footer/footer.component';
 import { NgIf } from '@angular/common';
@@ -13,10 +13,11 @@ import { BetterJsonPipe } from '../shared/better-json.pipe';
   imports: [LinkComponent, NgIf, FooterComponent, BetterJsonPipe]
 })
 export class AppComponent {
+  private readonly clippy = inject(ClippyService);
+  private readonly jwtService = inject(JwtService);
+
   jwt: Jwt | undefined;
   decodedBase64 = '';
-
-  constructor(private readonly clippy: ClippyService, private readonly jwtService: JwtService) { }
 
   pasteJwt(ev: ClipboardEvent): void {
     this.jwt = undefined;
