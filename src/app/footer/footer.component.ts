@@ -1,5 +1,5 @@
 import { AppConfigService } from './../../shared/app-config.service';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SlicePipe } from '@angular/common';
 import { LinkComponent } from '../link/link.component';
 
@@ -13,7 +13,9 @@ export class FooterComponent {
   build: string;
   commit: string;
 
-  constructor(appConfig: AppConfigService) {
+  constructor() {
+    const appConfig = inject(AppConfigService);
+
     this.build = appConfig.build;
     this.commit = appConfig.commit;
   }
