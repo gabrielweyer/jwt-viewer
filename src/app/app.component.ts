@@ -2,7 +2,7 @@ import { ClippyService } from './../shared/clippy.service';
 import { Component, inject } from '@angular/core';
 import { JwtService, Jwt } from '../shared/jwt.service';
 import { FooterComponent } from './footer/footer.component';
-import { NgIf } from '@angular/common';
+
 import { LinkComponent } from './link/link.component';
 import { BetterJsonPipe } from '../shared/better-json.pipe';
 
@@ -10,7 +10,7 @@ import { BetterJsonPipe } from '../shared/better-json.pipe';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [LinkComponent, NgIf, FooterComponent, BetterJsonPipe]
+  imports: [LinkComponent, FooterComponent, BetterJsonPipe]
 })
 export class AppComponent {
   private readonly clippy = inject(ClippyService);
