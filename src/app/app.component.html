@@ -8,17 +8,27 @@
     </div>
     <div class="jwt-viewer__output">
       <h2>Payload</h2>
-      <div *ngIf="jwt">
-        <pre>{{jwt.payload | betterJson}}</pre>
-        <ul>
-          <li *ngIf="jwt.iat"><span class="mono-font">iat</span> (Issued At): {{jwt.iat}}</li>
-          <li *ngIf="jwt.nbf"><span class="mono-font">nbf</span> (Not Before): {{jwt.nbf}}</li>
-          <li *ngIf="jwt.exp"><span class="mono-font">exp</span> (Expiration Time): {{jwt.exp}}</li>
-        </ul>
-        <h3>Decode Base64</h3>
-        <input type="text" (paste)="pasteBase64($event)">
-        <pre *ngIf="decodedBase64">{{decodedBase64}}</pre>
-      </div>
+      @if (jwt) {
+        <div>
+          <pre>{{jwt.payload | betterJson}}</pre>
+          <ul>
+            @if (jwt.iat) {
+              <li><span class="mono-font">iat</span> (Issued At): {{jwt.iat}}</li>
+            }
+            @if (jwt.nbf) {
+              <li><span class="mono-font">nbf</span> (Not Before): {{jwt.nbf}}</li>
+            }
+            @if (jwt.exp) {
+              <li><span class="mono-font">exp</span> (Expiration Time): {{jwt.exp}}</li>
+            }
+          </ul>
+          <h3>Decode Base64</h3>
+          <input type="text" (paste)="pasteBase64($event)">
+          @if (decodedBase64) {
+            <pre>{{decodedBase64}}</pre>
+          }
+        </div>
+      }
     </div>
   </div>
   <app-footer class="jwt-viewer__footer"></app-footer>
