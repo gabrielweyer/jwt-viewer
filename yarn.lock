@@ -473,12 +473,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@angular/compiler@npm:21.0.0"
+"@angular/compiler@npm:^21.0.2":
+  version: 21.0.2
+  resolution: "@angular/compiler@npm:21.0.2"
   dependencies:
     tslib: ^2.3.0
-  checksum: 7f32076a9928a51a374c8a3f1a6d8a86a2d603ff45d93d73e89255c444c9cdaecc4c29bf0bf0d1175d410a19d9bb220489e42d3ca122febc7e78ee11462a3e7f
+  checksum: 182599735168e3604e8657af0fc36e06c91a459947aee481e3ef86a27cebadd099a90f3e77d02cdabb6996a86c527d366d0cfb72d33ef9cdb337ca2ef579a40d
   languageName: node
   linkType: hard
 
@@ -6544,7 +6544,7 @@ __metadata:
     "@angular/build": ^21.0.0
     "@angular/cli": 21.0.0
     "@angular/common": ^21.0.1
-    "@angular/compiler": ^21.0.0
+    "@angular/compiler": ^21.0.2
     "@angular/compiler-cli": 21.0.0
     "@angular/core": ^21.0.0
     "@angular/forms": ^21.0.0
