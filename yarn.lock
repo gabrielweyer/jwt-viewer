@@ -482,21 +482,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/core@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@angular/core@npm:21.0.0"
+"@angular/core@npm:^21.0.7":
+  version: 21.0.8
+  resolution: "@angular/core@npm:21.0.8"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/compiler": 21.0.0
+    "@angular/compiler": 21.0.8
     rxjs: ^6.5.3 || ^7.4.0
-    zone.js: ~0.15.0
+    zone.js: ~0.15.0 || ~0.16.0
   peerDependenciesMeta:
     "@angular/compiler":
       optional: true
     zone.js:
       optional: true
-  checksum: d49e48b4fe92e6b0ef315c5a4ab0951bfd3dff2df4618d1d16797bc85d74582579886c8b45799139b030d606c60a772a6380d8471c61a9d47f0b59e4de28c14d
+  checksum: 92d5f1ad3c461867f118b2ef3fae8f7970a10f396b2e20f1b3a51644b2ed37eb5092b6baa0805f6bbc95fde486fb5d429fb28c16ac55d1fd300d76993d73030b
   languageName: node
   linkType: hard
 
@@ -6560,7 +6560,7 @@ __metadata:
     "@angular/common": ^21.0.1
     "@angular/compiler": ^21.0.2
     "@angular/compiler-cli": 21.0.0
-    "@angular/core": ^21.0.0
+    "@angular/core": ^21.0.7
     "@angular/forms": ^21.0.0
     "@angular/platform-browser": ^21.0.0
     "@angular/platform-browser-dynamic": ^21.0.0
