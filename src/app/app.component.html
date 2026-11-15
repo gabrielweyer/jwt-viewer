@@ -8,7 +8,7 @@
     </div>
     <div class="jwt-viewer__output">
       <h2>Payload</h2>
-      @if (jwt) {
+      @if (jwt(); as jwt) {
         <div>
           <pre>{{jwt.payload | betterJson}}</pre>
           <ul>
@@ -24,8 +24,8 @@
           </ul>
           <h3>Decode Base64</h3>
           <input type="text" (paste)="pasteBase64($event)">
-          @if (decodedBase64) {
-            <pre>{{decodedBase64}}</pre>
+          @if (decodedBase64()) {
+            <pre>{{decodedBase64()}}</pre>
           }
         </div>
       }
