@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
 import { inject, provideAppInitializer } from '@angular/core';
 import { AppConfigService } from '../shared/app-config.service';
-import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
           const config = inject(AppConfigService);
           return config.load();
         }),
-        provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        provideHttpClient(),
         provideHttpClientTesting()
       ]
     }).compileComponents();
