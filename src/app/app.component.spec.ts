@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LinkComponent } from './link/link.component';
 import { inject, provideAppInitializer } from '@angular/core';
 import { AppConfigService } from '../shared/app-config.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -22,7 +22,7 @@ describe('AppComponent', () => {
           const config = inject(AppConfigService);
           return config.load();
         }),
-        provideHttpClient(withInterceptorsFromDi())
+        provideHttpClient(withXhr(), withInterceptorsFromDi())
     ]
 }).compileComponents();
   }));
