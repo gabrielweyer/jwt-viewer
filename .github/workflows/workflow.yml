@@ -58,6 +58,12 @@ jobs:
         run: yarn lint
       - name: yarn test-ci
         run: yarn test-ci
+      - name: Upload coverage
+        uses: actions/upload-artifact@v6
+        with:
+          name: coverage
+          path: coverage
+          if-no-files-found: error
       - name: yarn build-prod
         run: yarn build-prod
       - name: Version web artifact
@@ -73,13 +79,6 @@ jobs:
         with:
           name: bicep
           path: deploy
-          if-no-files-found: error
-      - name: Upload coverage
-        uses: actions/upload-artifact@v6
-        if: always()
-        with:
-          name: coverage
-          path: coverage
           if-no-files-found: error
       - name: Determine if we're deploying on Pull Request
         id: should_deploy_pr
